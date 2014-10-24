@@ -9,6 +9,10 @@ Ext.define('Game.controller.MovementController', {
                 selector: '#myHero',
                 xtype: 'image',
                 autoCreate: true
+            },
+            ground:{
+                selector:'#myGround',
+                xtype:'ground'
             }
         },
         control: {},
@@ -16,16 +20,22 @@ Ext.define('Game.controller.MovementController', {
     onMoveLeft: function() {
         this.changeToRollingImg();
         var hero = this.getHero().element;
+        var ground = this.getGround().element;
         if (hero.getLeft() - 10 > this.MAX_LEFT_OFFSET) {
             hero.setLeft(hero.getLeft() - 10);
+            ground.removeCls('moving-forward-ground');
+            ground.addCls('moving-backward-ground');
         }
         this.changeToNormalImg();
     },
     onMoveRight: function() {
         this.changeToRollingImg();
         var hero = this.getHero().element;
+        var ground = this.getGround().element;
         if (hero.getLeft() + 10 < this.MAX_RIGHT_OFFSET) {
             hero.setLeft(hero.getLeft() + 10);
+            ground.addCls('moving-forward-ground');
+            ground.removeCls('moving-backward-ground');
         }
         this.changeToNormalImg();
     },

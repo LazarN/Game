@@ -1,12 +1,55 @@
+@-webkit-keyframes animatedbackgroundforward{
+    from {background-position: 100% 0; }
+    to { background-position: 0 0; }
+}
+
+@keyframes animatedbackgroundforward {
+    from {background-position: 100% 0; }
+    to { background-position: 0 0; }
+}
+
+@-webkit-keyframes animatedbackgroundbackward{
+    from {background-position: 0 0; }
+    to { background-position: 100% 0; }
+}
+
+@keyframes animatedbackgroundbackward {
+    from {background-position: 0 0; }
+    to { background-position: 100% 0; }
+}
+.moving-forward-ground{
+    width: 100%; 
+    /*height: 400px; */
+    background-image: url('ground.jpg');
+    background-position: 0px 0px;
+    /*background-repeat: repeat-x;*/
+
+    -webkit-animation: animatedbackgroundforward 40s;
+}
+
+.ground{
+    width: 100%; 
+    /*height: 400px; */
+    background-image: url('ground.jpg');
+    background-position: 0px 0px;
+    background-repeat: repeat-x;
+}
+
+.moving-backward-ground{
+    width: 100%; 
+    /*height: 400px; */
+    background-image: url('ground.jpg');
+    background-position: 0px 0px;
+    /*background-repeat: repeat-x;*/
+
+    -webkit-animation: animatedbackgroundbackward 40s;
+}
+
 .top-bar{
 	background-image: url('ground.jpg');
     background-repeat: repeat-x;
 }
 
-.ground{
-    background-image: url('ground.jpg');
-    background-repeat: repeat-x;
-}
 .main{
 	/*background-color: red;*/
 	width : 100%;
