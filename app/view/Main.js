@@ -8,10 +8,13 @@ Ext.define('Game.view.Main', {
     config: {
 
         items: [{
+            xtype: 'panel',
             title: 'MyGame',
+            // region: 'center',
+            // flex: 8,
             iconCls: 'home',
-            height: 1000,
             cls: 'main',
+            // The divs and css for the clouds
             html: '<div id="clouds"><div class="cloud x1"></div><div class="cloud x2"></div><div class="cloud x3"></div><div class="cloud x4"></div><div class="cloud x5"></div>',
             items: [{
                 xtype: 'image',
@@ -23,15 +26,9 @@ Ext.define('Game.view.Main', {
             }, ]
         }, {
             docked: 'bottom',
-            xtype: 'ground'
+            xtype: 'ground',
+            // region: 'south',
+            // flex: 2
         }]
-    },
-
-    listeners: {
-        click: {
-            fn: function() {
-                console.log("Tapped on this panel");
-            }
-        }
     }
 });

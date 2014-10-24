@@ -16,16 +16,16 @@
 .character{
     background-image: url('hero.png');
     background-color: red;
-    width:60px !important;
-    height: 70px !important!;
+    width: 68px;
+    height: 70px;
     position: absolute;
-    top:200px !important;
+    top:200px;
 }
-.x-img.x-img-background{
-    background-position: left !important;
-    top:817px !important;
-    width:60px !important;
-    height: 70px !important!;
+.charcater.x-img.x-img-background{
+    background-position: left;
+    top:817px;
+    width:68px;
+    height: 70px;
     position: absolute;
 }
 
@@ -46,7 +46,8 @@ body {
 
 /*Time to finalise the cloud shape*/
 .cloud {
-    width: 200px; height: 60px;
+    width: 200px; 
+    height: 60px;
     background: #fff;
     
     border-radius: 200px;

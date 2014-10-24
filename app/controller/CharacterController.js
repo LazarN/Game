@@ -1,8 +1,6 @@
 Ext.define('Game.controller.CharacterController', {
 	extend: 'Ext.app.Controller',
-	views: [
-		'Game.view.Hero'
-	],
+	views: [],
 	refs: [{
 		ref: 'main',
 		selector: 'main'
@@ -16,7 +14,7 @@ Ext.define('Game.controller.CharacterController', {
 		})
 	},
 
-	onHeroClick: function(){
+	onHeroClick: function() {
 		alert('hero clicked');
 		console.log('clicked');
 	}

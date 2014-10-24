@@ -18,12 +18,8 @@ Ext.application({
     ],
 
     views: [
-        'InitialView',
-        'MainView',
-        'TopBar',
         'Main',
         'GroundView',
-        'Hero'
     ],
 
     controllers: [
