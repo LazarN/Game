@@ -6,24 +6,34 @@ Ext.define('Game.controller.MovementController', {
 
         },
         control: {
-            'body': {
-                move_left: function() {
-                    console.log('dasdadasdasdasdasdasasddasdasdasdas');
-                    this.onMoveLeft();
-                },
-                move_left: 'onMoveLeft'
-            },'window': {
-                move_left: function() {
-                    console.log('dasdadasdasdasdasdasasddasdasdasdas');
-                    this.onMoveLeft();
-                },
-                move_left: 'onMoveLeft'
-            },
         },
-        listen: {}
+    },
+    onMoveLeft: function() {
+        console.log('LEFT')
+    },
+    onMoveRight: function() {
+        console.log('RIGHT')
+    },
+    onMoveUp: function() {
+        console.log('UP')
     },
 
-    onMoveLeft: function(argument) {
-        console.log('lqlqlqlql')
+    //called when the Application is launched, remove if not needed
+    launch: function(app) {
+        var self = this;
+        debugger;
+        window.onkeydown = function(event) {
+            switch (event.keyCode) {
+                case 39:
+                    self.onMoveRight()
+                    break;
+                case 38:
+                    self.onMoveUp();
+                    break;
+                case 37:
+                    self.onMoveLeft();
+                    break;
+            }
+        }
     }
 });

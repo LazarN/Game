@@ -52,21 +52,6 @@ Ext.application({
     launch: function() {
         // Destroy the #appLoadingIndicator element
         Ext.fly('appLoadingIndicator').destroy();
-        var s = this;
-        window.onkeydown = function(event) {
-            switch (event.keyCode) {
-                case 39:
-                    s.fireEvent('move_left');
-                    console.log('RIGHT');
-                    break;
-                case 38:
-                    console.log('UP');
-                    break;
-                case 37:
-                    console.log('LEFT');
-                    break;
-            }
-        }
         // Initialize the main view
         Ext.Viewport.add(Ext.create('Game.view.Main'));
     },
