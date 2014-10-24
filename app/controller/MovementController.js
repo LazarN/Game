@@ -31,21 +31,22 @@ Ext.define('Game.controller.MovementController', {
     },
     onMoveUp: function() {
         var hero = this.getHero().element;
-        hero.setTop(hero.getTop() - 50);
+        // hero.setTop(hero.getTop() - 50);
 
-        // Ext.create('Ext.fx.Anim', {
-        //     target: hero,
-        //     duration: 1000,
-        //     from: {
-        //         top: hero.getTop()
-        //     },
-        //     to: {
-        //         top: hero.getTop() + 50
-        //     }
-        // });
-debugger;
+        anim = Ext.create('Ext.Anim', {
+            autoClear: false,
+            from: {
+                'left': hero.getTop()
+            },
+            to: {
+                'left': hero.getTop() - 50
+            },
+            delay: 1000,
+            duration: 1000
+        });
 
-        hero.setTop(hero.getTop() - 50);
+        anim.run(hero);
+        // hero.setTop(hero.getTop() - 50);
     },
 
     changeToRollingImg: function() {
