@@ -302,6 +302,17 @@
         "name": "MovementTest",
         "controllerNamespace": "Game.controller"
       }
+    },
+    "app/controller/GroundController.js": {
+      "source": "{controllerFileName}.js.tpl.merge",
+      "version": "7cd8d1cf12515ca525732931d6b775e3f7924ad9",
+      "parameters": {
+        "appName": "Game",
+        "controllerName": "GroundController",
+        "controllerFileName": "GroundController",
+        "name": "GroundController",
+        "controllerNamespace": "Game.controller"
+      }
     }
   }
 }

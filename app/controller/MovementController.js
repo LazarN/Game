@@ -1,8 +1,9 @@
 Ext.define('Game.controller.MovementController', {
     extend: 'Ext.app.Controller',
+    require: ['Ext.Anim'],
 
     MAX_LEFT_OFFSET: 50,
-    MAX_RIGHT_OFFSET: 150,
+    MAX_RIGHT_OFFSET: 250,
     config: {
         refs: {
             hero: {
@@ -10,9 +11,9 @@ Ext.define('Game.controller.MovementController', {
                 xtype: 'image',
                 autoCreate: true
             },
-            ground:{
-                selector:'#myGround',
-                xtype:'ground'
+            ground: {
+                selector: '#myGround',
+                xtype: 'ground'
             }
         },
         control: {},
@@ -23,40 +24,46 @@ Ext.define('Game.controller.MovementController', {
         var ground = this.getGround().element;
         if (hero.getLeft() - 10 > this.MAX_LEFT_OFFSET) {
             hero.setLeft(hero.getLeft() - 10);
-            ground.removeCls('moving-forward-ground');
-            ground.addCls('moving-backward-ground');
+        } else {
+            ground.setLeft(ground.getLeft() + 10);
         }
         this.changeToNormalImg();
     },
+
     onMoveRight: function() {
         this.changeToRollingImg();
         var hero = this.getHero().element;
         var ground = this.getGround().element;
         if (hero.getLeft() + 10 < this.MAX_RIGHT_OFFSET) {
             hero.setLeft(hero.getLeft() + 10);
-            ground.addCls('moving-forward-ground');
-            ground.removeCls('moving-backward-ground');
+        } else {
+            console.log(ground.getLeft());
+            ground.setLeft(ground.getLeft() - 10);
         }
         this.changeToNormalImg();
     },
+
     onMoveUp: function() {
         var hero = this.getHero().element;
-        // hero.setTop(hero.getTop() - 50);
+        hero.setTop(hero.getTop() - 50);
 
-        anim = Ext.create('Ext.Anim', {
-            autoClear: false,
-            from: {
-                'left': hero.getTop()
-            },
-            to: {
-                'left': hero.getTop() - 50
-            },
-            delay: 1000,
-            duration: 1000
-        });
+        // anim = Ext.create('Ext.Anim', {
+        //     autoClear: false,
+        //     from: {
+        //         'left': hero.getTop()
+        //     },
+        //     to: {
+        //         'left': hero.getTop() - 50
+        //     },
+        //     delay: 1000,
+        //     duration: 1000
+        // });
 
-        anim.run(hero);
-        // hero.setTop(hero.getTop() - 50);
+        Ext.Function.defer(function() {
+            hero.setTop(hero.getTop() + 50);
+        }, 200);
+
+        // anim.run(hero);
     },
 
     changeToRollingImg: function() {
@@ -64,7 +71,7 @@ Ext.define('Game.controller.MovementController', {
     },
 
     changeToNormalImg: function() {
-        this.getHero().setSrc('resources/icons/hero.png');
+        this.getHero().setSrc('resources/icons/hero-rolling.gif');
     },
 
     //called when the Application is launched, remove if not needed

@@ -19,7 +19,7 @@ Ext.define('Game.view.Main', {
             items: [{
                 xtype: 'image',
                 itemId: 'myHero',
-                src: 'resources/css/hero.png',
+                src: 'resources/icons/hero-rolling.gif',
                 widht: 50,
                 height: 70,
                 cls: 'charcater',
