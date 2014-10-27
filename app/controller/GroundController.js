@@ -13,5 +13,9 @@ Ext.define('Game.controller.GroundController', {
     // Here we will create obstacles
     launch: function(app) {
         
+    },
+
+    createObstacle: function() {
+        
     }
 });

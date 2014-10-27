@@ -24,7 +24,8 @@ Ext.application({
 
     controllers: [
         'CharacterController',
-        'MovementController'
+        'MovementController',
+        'GroundController'
     ],
 
     icon: {
