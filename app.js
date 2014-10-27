@@ -16,10 +16,11 @@ Ext.application({
     requires: [
         'Ext.MessageBox'
     ],
-
+    
     views: [
         'Main',
         'GroundView',
+        'TopBar'
     ],
 
     controllers: [
