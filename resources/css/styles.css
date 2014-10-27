@@ -24,12 +24,36 @@
 
     -webkit-animation: animatedbackgroundforward 40s;
 }
+.red-label{
+    color:red;
+    font-family: 'Verdana'
+}
+.heart-image{
+    margin:10px;
+    width:30px;
+    height:30px;
+    color:red;
+}
+.top-bar{
+    background-color: #c9dbe9;
+}
+.top-label{
+    margin:10px;
+    height:30px;
+    width: auto;
+    color:red;
+    font-family: 'Verdana'
+}
 
 .ground{
     width: 100%; 
     background-image: url('ground.jpg');
     background-position: 0px 0px;
     background-repeat: repeat-x;
+}
+
+.top-bar .x-img.x-img-background{
+    background-position: right;
 }
 
 .moving-backward-ground{
@@ -40,7 +64,7 @@
     -webkit-animation: animatedbackgroundbackward 40s;
 }
 
-.top-bar{
+.bottom-bar{
 	background-image: url('ground.jpg');
     background-repeat: repeat-x;
 }
@@ -60,7 +84,7 @@
 }
 .charcater.x-img.x-img-background{
     background-position: left;
-    top:817px;
+    top:762px;
     left: 50px;
     width:68px;
     height: 70px;

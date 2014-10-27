@@ -8,6 +8,9 @@ Ext.define('Game.view.Main', {
     config: {
 
         items: [{
+            xtype:'topbar',
+            docked:'top',
+        },{
             xtype: 'panel',
             title: 'MyGame',
             // region: 'center',
