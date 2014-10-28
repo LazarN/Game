@@ -25,7 +25,6 @@ Ext.define('Game.view.TopBar', {
 			cls:'red-label',
 			flex: 1,
 			margin: 12
-
 		}]
 	}
 });

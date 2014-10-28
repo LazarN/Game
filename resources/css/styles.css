@@ -47,9 +47,11 @@
 
 .ground{
     width: 100%; 
+    height: 10%;
     background-image: url('ground.jpg');
     background-position: 0px 0px;
     background-repeat: repeat-x;
+    position: relative;
 }
 
 .top-bar .x-img.x-img-background{
@@ -82,13 +84,15 @@
     position: absolute;
     top:200px;
 }
+
 .charcater.x-img.x-img-background{
     background-position: left;
-    top:720px;
+    top: 85%;
     left: 50px;
-    width:68px;
-    height: 70px;
+    width: 5%;
+    height: 5%;
     position: absolute;
+    min-width: 32px;
 }
 
 *{ margin: 0; padding: 0;}

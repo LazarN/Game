@@ -58,24 +58,26 @@ Ext.define('Game.controller.MovementController', {
         var hero = this.getHero().element,
             self = this,
             ground = this.getGround().element;
-        hero.setTop(hero.getTop() - 50);
 
+        // if (hero.getTop() > 615) {
+        hero.setTop(hero.getTop() - 50);
         Ext.Function.defer(function() {
             hero.setTop(hero.getTop() + 50);
-            // if (self.currentPosition === self.position.LEFT) {
-            //     if (hero.getLeft() - 50 < this.MAX_RIGHT_OFFSET) {
-            //         hero.setLeft(hero.getLeft() - 50);
-            //     } else {
-            //         ground.setLeft(ground.getLeft() + 50);
-            //     }
-            // } else {
-            //     if (hero.getLeft() + 50 < this.MAX_RIGHT_OFFSET) {
-            //         hero.setLeft(hero.getLeft() + 50);
-            //     } else {
-            //         ground.setLeft(ground.getLeft() - 50);
-            //     }
-            // }
+            if (self.currentPosition === self.position.LEFT) {
+                if (hero.getLeft() - 20 < this.MAX_RIGHT_OFFSET) {
+                    hero.setLeft(hero.getLeft() - 20);
+                } else {
+                    ground.setLeft(ground.getLeft() + 20);
+                }
+            } else {
+                if (hero.getLeft() + 20 < this.MAX_RIGHT_OFFSET) {
+                    hero.setLeft(hero.getLeft() + 20);
+                } else {
+                    ground.setLeft(ground.getLeft() - 20);
+                }
+            }
         }, 200);
+        // }
     },
 
     changeToLeft: function() {
@@ -94,7 +96,7 @@ Ext.define('Game.controller.MovementController', {
         window.onkeydown = function(event) {
             switch (event.keyCode) {
                 case 39:
-                    self.onMoveRight()
+                    self.onMoveRight();
                     break;
                 case 38:
                     self.onMoveUp();

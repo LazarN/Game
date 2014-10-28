@@ -5,7 +5,6 @@ Ext.define('Game.view.GroundView', {
 	config: {
 		layout: 'hbox'
 	},
-	height: 70,
 	width: 5000,
 	cls: 'ground'
 });
