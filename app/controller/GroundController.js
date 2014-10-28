@@ -3,6 +3,10 @@ Ext.define('Game.controller.GroundController', {
 
     config: {
         refs: {
+            mainView: {
+                selector: 'main',
+                xtype: 'main'
+            },
             ground: {
                 selector: '#myGround',
                 xtype: 'ground'
@@ -15,18 +19,50 @@ Ext.define('Game.controller.GroundController', {
 
     // Here we will create obstacles
     launch: function(app) {
-        this.createObstacle();
+        this.createObstacles();
+        this.createCoins();
+        this.createFlag();
     },
 
-    createObstacle: function() {
+    createObstacles: function() {
         var self = this;
-        var fire = Ext.create('Ext.Img', {
-            src: 'resources/icons/fire.gif',
+        for (var i = 15 - 1; i >= 0; i--) {
+            var position = (Math.random() * 4500) + 200;
+            Ext.create('Ext.Img', {
+                src: 'resources/icons/fire.gif',
+                height: 30,
+                width: 30,
+                left: position,
+                cls: 'obstacle',
+                renderTo: self.getGround().element
+            });
+        };
+    },
+
+    createCoins: function() {
+        var self = this;
+        for (var i = 15 - 1; i >= 0; i--) {
+            var position = (Math.random() * 4500) + 200;
+            Ext.create('Ext.Img', {
+                src: 'resources/icons/coin.gif',
+                height: 30,
+                width: 30,
+                left: position,
+                cls: 'coin',
+                renderTo: self.getGround().element
+            });
+        };
+    },
+
+    createFlag: function() {
+        var self = this;
+        Ext.create('Ext.Img', {
+            src: 'resources/icons/finish.gif',
             height: 30,
             width: 30,
+            left: 4800,
+            cls: 'obstacle',
             renderTo: self.getGround().element
         });
-
-
     }
 });

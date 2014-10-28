@@ -64,16 +64,16 @@ Ext.define('Game.controller.MovementController', {
         Ext.Function.defer(function() {
             hero.setTop(hero.getTop() + 50);
             if (self.currentPosition === self.position.LEFT) {
-                if (hero.getLeft() - 20 < this.MAX_RIGHT_OFFSET) {
-                    hero.setLeft(hero.getLeft() - 20);
+                if (hero.getLeft() - 10 < this.MAX_RIGHT_OFFSET) {
+                    hero.setLeft(hero.getLeft() - 10);
                 } else {
-                    ground.setLeft(ground.getLeft() + 20);
+                    ground.setLeft(ground.getLeft() + 10);
                 }
             } else {
-                if (hero.getLeft() + 20 < this.MAX_RIGHT_OFFSET) {
-                    hero.setLeft(hero.getLeft() + 20);
+                if (hero.getLeft() + 10 < this.MAX_RIGHT_OFFSET) {
+                    hero.setLeft(hero.getLeft() + 10);
                 } else {
-                    ground.setLeft(ground.getLeft() - 20);
+                    ground.setLeft(ground.getLeft() - 10);
                 }
             }
         }, 200);

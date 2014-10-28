@@ -45,6 +45,16 @@
     font-family: 'Verdana'
 }
 
+.obstacle {
+    position: relative !important;
+    top: -30%;
+}
+
+.coin {
+    position: relative !important;
+    top: -100%;
+}
+
 .ground{
     width: 100%; 
     height: 10%;
