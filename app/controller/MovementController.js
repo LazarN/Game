@@ -24,6 +24,7 @@ Ext.define('Game.controller.MovementController', {
         },
         control: {},
     },
+
     onMoveLeft: function() {
         this.changeToLeft();
         this.moveLeft();
@@ -35,6 +36,7 @@ Ext.define('Game.controller.MovementController', {
         if (hero.getLeft() - 10 > this.MAX_LEFT_OFFSET) {
             hero.setLeft(hero.getLeft() - 10);
         } else {
+            if (ground.getLeft() > -10) return;
             ground.setLeft(ground.getLeft() + 10);
         }
     },
@@ -50,6 +52,7 @@ Ext.define('Game.controller.MovementController', {
         if (hero.getLeft() + 10 < this.MAX_RIGHT_OFFSET) {
             hero.setLeft(hero.getLeft() + 10);
         } else {
+            if (ground.getLeft() < -4700) return;
             ground.setLeft(ground.getLeft() - 10);
         }
     },
@@ -64,17 +67,9 @@ Ext.define('Game.controller.MovementController', {
         Ext.Function.defer(function() {
             hero.setTop(hero.getTop() + 50);
             if (self.currentPosition === self.position.LEFT) {
-                if (hero.getLeft() - 10 < this.MAX_RIGHT_OFFSET) {
-                    hero.setLeft(hero.getLeft() - 10);
-                } else {
-                    ground.setLeft(ground.getLeft() + 10);
-                }
+                self.moveLeft();
             } else {
-                if (hero.getLeft() + 10 < this.MAX_RIGHT_OFFSET) {
-                    hero.setLeft(hero.getLeft() + 10);
-                } else {
-                    ground.setLeft(ground.getLeft() - 10);
-                }
+                self.moveRight();
             }
         }, 200);
         // }

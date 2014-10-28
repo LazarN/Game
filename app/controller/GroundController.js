@@ -22,6 +22,7 @@ Ext.define('Game.controller.GroundController', {
         this.createObstacles();
         this.createCoins();
         this.createFlag();
+        this.createCrow();
     },
 
     createObstacles: function() {
@@ -62,6 +63,18 @@ Ext.define('Game.controller.GroundController', {
             width: 30,
             left: 4800,
             cls: 'obstacle',
+            renderTo: self.getGround().element
+        });
+    },
+
+    createCrow: function() {
+        var self = this;
+        Ext.create('Ext.Img', {
+            src: 'resources/icons/crowd.jpg',
+            height: 70,
+            width: 500,
+            left: 5100,
+            cls: 'crowd',
             renderTo: self.getGround().element
         });
     }
