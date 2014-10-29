@@ -31,7 +31,7 @@ Ext.define('Game.controller.GroundController', {
             var position = (Math.random() * 4500) + 200;
             Ext.create('Ext.Img', {
                 src: 'resources/icons/fire.gif',
-                height: 30,
+                // height: 30,
                 width: 30,
                 left: position,
                 cls: 'obstacle',
@@ -46,7 +46,8 @@ Ext.define('Game.controller.GroundController', {
             var position = (Math.random() * 4500) + 200;
             Ext.create('Ext.Img', {
                 src: 'resources/icons/coin.gif',
-                height: 30,
+                itemId: 'coin',
+                // height: 30,
                 width: 30,
                 left: position,
                 cls: 'coin',
@@ -59,10 +60,8 @@ Ext.define('Game.controller.GroundController', {
         var self = this;
         Ext.create('Ext.Img', {
             src: 'resources/icons/finish.gif',
-            height: 30,
             width: 30,
-            left: 4800,
-            cls: 'obstacle',
+            cls: 'flag',
             renderTo: self.getGround().element
         });
     },
@@ -71,9 +70,7 @@ Ext.define('Game.controller.GroundController', {
         var self = this;
         Ext.create('Ext.Img', {
             src: 'resources/icons/crowd.jpg',
-            height: 70,
             width: 500,
-            left: 5100,
             cls: 'crowd',
             renderTo: self.getGround().element
         });

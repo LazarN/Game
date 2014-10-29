@@ -34,30 +34,63 @@
     height:30px;
     color:red;
 }
+
+.top-number-field.x-field {
+    height:30px;
+    width: auto;
+    color:red;
+    font-family: 'Verdana';
+    background: transparent;
+}
 .top-bar{
     background-color: #c9dbe9;
 }
 .top-label{
-    margin:10px;
     height:30px;
     width: auto;
     color:red;
-    font-family: 'Verdana'
+    font-family: 'Verdana';
+    background: transparent;
 }
 
 .obstacle {
     position: relative !important;
-    top: -30%;
+    height: 50%;
+    top: -50%;
+}
+.top-number-field .x-field.top-label{
+    height:30px;
+    width: auto;
+    color:red;
+    font-family: 'Verdana';
+    background: transparent;
+}
+.top-number-field .x-form-label.top-label{
+    height:30px;
+    width: auto;
+    color:red;
+    font-family: 'Verdana';
+    background: transparent;
+}
+
+.flag {
+    position: relative !important;
+    height: 100%;
+    top: -200%;
+    left: 47%
 }
 
 .coin {
     position: relative !important;
+    height: 50%;
     top: -100%;
 }
 
 .crowd {
     position: relative !important;
-    top: -75%;
+    top: -200%;
+    height: 100%;
+    left: 49%;
 }
 
 .ground{

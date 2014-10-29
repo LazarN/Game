@@ -16,7 +16,7 @@ Ext.application({
     requires: [
         'Ext.MessageBox'
     ],
-    
+
     views: [
         'Main',
         'GroundView',
@@ -26,7 +26,8 @@ Ext.application({
     controllers: [
         'CharacterController',
         'MovementController',
-        'GroundController'
+        'GroundController',
+        'ScoreController'
     ],
 
     icon: {

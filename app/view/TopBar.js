@@ -10,9 +10,15 @@ Ext.define('Game.view.TopBar', {
 			pack: 'start'
 		},
 		items: [{
-			xtype: 'label',
-			cls: 'top-label',
-			html: 'Score: 0',
+			xtype: 'numberfield',
+			itemId: 'scoreView',
+			label: 'Score: ',
+			value: 0,
+			cls: 'top-number-field',
+			readOnly: true,
+			labelCls: 'top-label',
+			fieldCls: 'top-label',
+			name: 'score',
 			flex: 4
 		}, {
 			xtype: 'image',
@@ -22,7 +28,7 @@ Ext.define('Game.view.TopBar', {
 		}, {
 			xtype: 'label',
 			html: '3',
-			cls:'red-label',
+			cls: 'red-label',
 			flex: 1,
 			margin: 12
 		}]
