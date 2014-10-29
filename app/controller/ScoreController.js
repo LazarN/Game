@@ -20,6 +20,6 @@ Ext.define('Game.controller.ScoreController', {
     onCoinCollected: function(coinView) {
         var score = this.getScore();
         coinView.hide();
-        score.setValue(score.getValue() + COIN_VALUE);
+        score.setValue(score.getValue() + this.COIN_VALUE);
     },
 });
